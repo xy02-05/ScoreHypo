@@ -1,0 +1,9 @@
+*.pyc
+*.npy
+*.deb
+*.pkl
+__pycache__
+version.py
+/.vscode
+/.eggs
+*.DS_Store
