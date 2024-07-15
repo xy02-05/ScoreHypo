@@ -1,0 +1,1 @@
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/train/hyponet/in-the-wild.yaml --exp experiment/hyponet --doc in-the-wild

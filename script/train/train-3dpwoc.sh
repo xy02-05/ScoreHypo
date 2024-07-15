@@ -1,0 +1,3 @@
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/train/hyponet/3dpwoc.yaml --exp experiment/hyponet --doc 3dpwoc
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/train/hyponet/3dpwoc-ft.yaml --exp experiment/hyponet --doc 3dpwoc
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/train/scorenet/no3dpw.yaml --exp experiment/scorenet --doc 3dpwoc

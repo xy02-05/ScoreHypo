@@ -1,0 +1,1 @@
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/test/test-h36m.yaml --exp experiment/scorenet --doc 3dpw --validate --multihypo_n 10 --batch_size 160

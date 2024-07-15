@@ -1,0 +1,1 @@
+torchrun --nproc_per_node=2 --master_port=23452 main/main.py --config config/test/test-3dpwoc.yaml --exp experiment/scorenet --doc no3dpw --validate --multihypo_n 10 --batch_size 160
