@@ -21,13 +21,6 @@ from utils.filter_hub import parents
 BN_MOMENTUM = 0.1
 logger = logging.getLogger(__name__)
 
-def load_model(state_model,state):
-    for key in state_model.keys():
-        model_key = 'preact.'+key
-        if model_key in state.keys() and state_model[key].shape == state[model_key].shape:
-            state_model[key] = state[model_key]
-    return state_model
-
 def conv3x3(in_planes, out_planes, stride=1):
     """3x3 convolution with padding"""
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
@@ -625,16 +618,7 @@ class PoseHighResolutionNet(nn.Module):
                 for name, _ in m.named_parameters():
                     if name in ['bias']:
                         nn.init.constant_(m.bias, 0)
-        '''
-        if os.path.isfile(pretrained):
-            pretrained_state_dict = torch.load(pretrained, map_location='cpu')
-            logger.info('=> loading pretrained model {}'.format(pretrained))
-            pretrained_state_dict = load_model(self.state_dict(),pretrained_state_dict)
-            print(self.load_state_dict(pretrained_state_dict, strict=False))
-        elif pretrained:
-            logger.error('=> please download pre-trained models first!')
-            raise ValueError('{} is not exist!'.format(pretrained))
-        '''
+
         if os.path.isfile(pretrained):
             pretrained_state_dict = torch.load(pretrained,map_location='cpu')
             logging.info('=> loading pretrained HRNet model {}'.format(pretrained))

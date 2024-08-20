@@ -27,7 +27,7 @@
   pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
   
   # 3. Pull our code.
-  https://github.com/xy02-05/ScoreHypo.git
+  git clone https://github.com/xy02-05/ScoreHypo.git
   cd ScoreHypo
   
   # 4. Install other packages. This project doesn't have any special or difficult-to-install dependencies.
@@ -79,7 +79,7 @@ python setup.py develop
 3. Set opengl's backend to osmesa via os.environ["PYOPENGL_PLATFORM"] = "osmesa"
 ```
 
-3. **Model weight.** Download the pre-trained ScoreHypo models from [Google drive](https://drive.google.com/drive/folders/1XtgInIQc84W7K6bcWSseimlIZAuZawdR?usp=sharing). Put the weight below `model` folder and follow the directory structure. Specify the load weight path by  `sampling.ckpt`  in  `config/infer/infer_*.yaml` for `ScoreNet` and  `training.scorenet.test_path` for `HypoNet`.
+3. **Model weight.** Download the pre-trained ScoreHypo models from [Google drive](https://drive.google.com/drive/folders/1XtgInIQc84W7K6bcWSseimlIZAuZawdR?usp=sharing). Put the weight below `experiment` folder and follow the directory structure. Specify the load weight path by  `sampling.ckpt`  in  `config/infer/infer_*.yaml` for `ScoreNet` and  `training.scorenet.test_path` for `HypoNet`.
 4. **Input image/video.** Prepare `input.jpg` or `input.mp4`  at `input` folder. Both image and video input are supported. Specify the input path and type by arguments.
 5. **RUN.** You can check the output at `output` folder.
 
